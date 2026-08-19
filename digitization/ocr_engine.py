@@ -26,9 +26,9 @@ class RecognizedLine:
 class TalimOCREngine:
     """Wraps a TrOCR model fine-tuned on Talim shorthand symbols."""
 
-    def __init__(self, model_name: str = "kani-project/trocr-talim-finetuned", device: str = None):
+    def __init__(self, model_name: str = "microsoft/trocr-base-handwritten", device: str = None):
         self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
-        self.processor = TrOCRProcessor.from_pretrained(model_name)
+        self.processor = TrOCRProcessor.from_pretrained(model_name, use_fast=False)
         self.model = VisionEncoderDecoderModel.from_pretrained(model_name).to(self.device)
         self.model.eval()
 
