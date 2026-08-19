@@ -1,0 +1,8 @@
+opencv-python>=4.9.0
+numpy>=1.26.0
+ultralytics>=8.3.0        # DocLayout-YOLO + YOLO-OBB (YOLO26-obb)
+torch>=2.2.0
+transformers>=4.40.0      # Microsoft TrOCR
+Pillow>=10.0.0
+spacy>=3.7.0
+google-generativeai>=0.7.0
